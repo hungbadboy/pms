@@ -1,0 +1,23 @@
+
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title th:text="#{page_title_404}"></title>
+<style th:replace="fragments/header :: header-css"></style>
+</head>
+<body>
+	<div th:replace="fragments/header :: header"></div>
+	<div class="container">
+	<div class="row" style="margin-top: 40px">
+		<div class="starter-template">
+			<h3>404 - Khong tim thay action</h3>
+			<div th:inline="text">Hello
+				'[[${#httpServletRequest.remoteUser}]]', you do not have permission
+				to access this page.</div>
+		</div>
+		</div>
+	</div>
+	<div th:replace="fragments/footer :: footer"></div>
+
+</body>
+</html>

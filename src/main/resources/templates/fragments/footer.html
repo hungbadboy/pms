@@ -1,0 +1,29 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+</head>
+<body>
+	<footer th:fragment="footer">
+		<!-- this is footer -->
+		&copy; 2017 TVO.com <span sec:authorize="isAuthenticated()">
+			| Logged user: <span sec:authentication="name"></span> | Roles: <span
+			sec:authentication="principal.authorities"></span> | <a
+			th:href="@{/logout}">Sign Out</a>
+		</span>
+		<script th:src="@{/js/jquery.min.js}"></script>
+		<script th:src="@{/js/bootstrap.min.js}"></script>
+		<script th:src="@{/js/common.js}"></script>
+	<script type="text/javascript">
+		$(document).ready(function() {
+		    $("#locales").change(function () {
+		        var selectedOption = $('#locales').val();
+		        if (selectedOption != ''){
+		        	window.location.href = addUrlParam('lang', selectedOption);
+		        }
+		    });
+		});
+		</script>
+	</footer>
+</body>
+</html>
