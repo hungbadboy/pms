@@ -8,6 +8,8 @@
 <body>
 
 	<div th:replace="fragments/header :: header"></div>
+	<h1>Welcome You</h1>
+    Now is: <b th:text="${execInfo.now.time}"></b>
 	<div th:replace="fragments/footer :: footer"></div>
 
 </body>
